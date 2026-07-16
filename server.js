@@ -51,9 +51,12 @@ app.get('/', async (req, res) => {
 
     console.log("Taking screenshot of profile...");
     await page.goto('https://github.com/Maladroy', {
-      waitUntil: 'networkidle2',
-      timeout: 15000
+      waitUntil: 'load',
+      timeout: 60000
     });
+
+    // Give GitHub an extra 2 seconds to finish rendering lazy-loaded images (like the cat!)
+    await new Promise(resolve => setTimeout(resolve, 2000));
 
     const newScreenshot = await page.screenshot({ type: 'png' });
     cachedImage = newScreenshot;
