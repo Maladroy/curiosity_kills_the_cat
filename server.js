@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 // Safely load the initial seed image into memory
 let cachedImage;
 try {
-  cachedImage = fs.readFileSync('./stephan.png');
+  cachedImage = fs.readFileSync('./seed.png');
   console.log("Seed image loaded successfully.");
 } catch (err) {
   console.error("CRITICAL: stephan.png not found in the root directory!");
