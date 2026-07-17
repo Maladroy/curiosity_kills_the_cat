@@ -18,8 +18,8 @@ function loadInitialImage() {
   } catch (err) {
     try {
       // If no iteration exists (cold start), load the seed cat
-      cachedImage = fs.readFileSync('./stephan.png');
-      console.log("No previous iteration. Loaded seed image (stephan.png).");
+      cachedImage = fs.readFileSync('./seed.png');
+      console.log("No previous iteration. Loaded seed image (seed.png).");
     } catch (fatalErr) {
       console.error("CRITICAL: stephan.png not found in the root directory!");
       process.exit(1); 
