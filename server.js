@@ -62,7 +62,7 @@ async function takeScreenshot() {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     console.log("Targeting the README area...");
-    const readmeElement = await page.$('article.markdown-body');
+    const readmeElement = await page.$('div.Box-body');
 
     if (readmeElement) {
       cachedImage = await readmeElement.screenshot({ type: 'png' });
